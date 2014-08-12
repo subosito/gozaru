@@ -51,7 +51,7 @@ func TestNorma_windowsReservedNamed(t *testing.T) {
 	assert.Equal(t, "file", Sanitize(`lpt1`))
 	assert.Equal(t, "file", Sanitize(`com4`))
 	assert.Equal(t, "file", Sanitize(` aux`))
-	assert.Equal(t, "file", Sanitize(` LpT\x122`))
+	assert.Equal(t, "file", Sanitize(" LpT\x122"))
 	assert.Equal(t, "COM10", Sanitize(`COM10`))
 }
 
