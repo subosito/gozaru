@@ -15,7 +15,7 @@ $ go get github.com/subosito/norma
 
 Norma basically normalizes, filters and truncates given filename to generates safe and cross platform filename. For example:
 
-```
+```go
 package main
 
 import (
@@ -31,13 +31,15 @@ func main() {
 
 You can add extra room for filename by using `SanitizePad`, see differences here:
 
-```
+```go
+// import "strings"
+
 name := strings.Repeat("A", 400)
 
-Sanitize(name, 100))
+norma.Sanitize(name)
 // => resulting filename is 255 characters long
 
-SanitizePad(name, 100))
+norma.SanitizePad(name, 100)
 // => resulting filename is 155 characters long
 ```
 
