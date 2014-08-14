@@ -1,6 +1,6 @@
 # norma
 
-[![Build Status](https://drone.io/github.com/subosito/norma/status.png)](https://drone.io/github.com/subosito/norma/latest)
+[![Build Status](https://travis-ci.org/subosito/norma.svg?branch=master)](https://travis-ci.org/subosito/norma)
 [![Coverage Status](https://coveralls.io/repos/subosito/norma/badge.png?branch=master)](https://coveralls.io/r/subosito/norma?branch=master)
 
 Filename sanitization for Go
