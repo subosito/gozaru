@@ -1,7 +1,7 @@
 # gozaru
 
 [![Build Status](https://travis-ci.org/subosito/gozaru.svg?branch=master)](https://travis-ci.org/subosito/gozaru)
-[![Coverage Status](https://coveralls.io/repos/subosito/gozaru/badge.png?branch=master)](https://coveralls.io/r/subosito/gozaru?branch=master)
+[![codecov](https://codecov.io/gh/subosito/gozaru/branch/master/graph/badge.svg)](https://codecov.io/gh/subosito/gozaru)
 
 Filename sanitization for Go
 
