@@ -1,4 +1,4 @@
-package norma
+package gozaru
 
 import (
 	"fmt"

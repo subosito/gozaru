@@ -1,30 +1,30 @@
-# norma
+# gozaru
 
-[![Build Status](https://travis-ci.org/subosito/norma.svg?branch=master)](https://travis-ci.org/subosito/norma)
-[![Coverage Status](https://coveralls.io/repos/subosito/norma/badge.png?branch=master)](https://coveralls.io/r/subosito/norma?branch=master)
+[![Build Status](https://travis-ci.org/subosito/gozaru.svg?branch=master)](https://travis-ci.org/subosito/gozaru)
+[![Coverage Status](https://coveralls.io/repos/subosito/gozaru/badge.png?branch=master)](https://coveralls.io/r/subosito/gozaru?branch=master)
 
 Filename sanitization for Go
 
 ## Installation
 
 ```
-$ go get github.com/subosito/norma
+$ go get github.com/subosito/gozaru
 ```
 
 ## Usage
 
-Norma basically normalizes, filters and truncates given filename to generates safe and cross-platform filename. For example:
+Gozaru basically normalizes, filters and truncates given filename to generates safe and cross-platform filename. For example:
 
 ```go
 package main
 
 import (
 	"fmt"
-	"github.com/subosito/norma"
+	"github.com/subosito/gozaru"
 )
 
 func main() {
-	name := norma.Sanitize("  what\\ēver//wëird:user:înput:")
+	name := gozaru.Sanitize("  what\\ēver//wëird:user:înput:")
 	fmt.Println(name) // => "whatēverwëirduserînput"
 }
 ```
@@ -36,10 +36,10 @@ You can add extra room for filename by using `SanitizePad`, see differences here
 
 name := strings.Repeat("A", 400)
 
-norma.Sanitize(name)
+gozaru.Sanitize(name)
 // => resulting filename is 255 characters long
 
-norma.SanitizePad(name, 100)
+gozaru.SanitizePad(name, 100)
 // => resulting filename is 155 characters long
 ```
 
@@ -55,5 +55,5 @@ Best practices for having a safe and cross-platform filenames are:
 
 ## Credits
 
-Norma is a Go port of [zaru](https://github.com/madrobby/zaru) by [@madrobby](https://github.com/madrobby). Thanks a lot for him.
+Gozaru is a Go port of [zaru](https://github.com/madrobby/zaru) by [@madrobby](https://github.com/madrobby). Thanks a lot for him.
 

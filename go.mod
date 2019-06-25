@@ -1,4 +1,4 @@
-module github.com/subosito/norma
+module github.com/subosito/gozaru
 
 go 1.12
 
