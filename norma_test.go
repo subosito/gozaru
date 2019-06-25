@@ -65,3 +65,9 @@ func TestNorma_dots(t *testing.T) {
 	assert.Equal(t, "file.pdf", Sanitize(`<.pdf`))
 	assert.Equal(t, "file..pdf", Sanitize(`..pdf`))
 }
+
+func TestNorma_fallback(t *testing.T) {
+	assert.Equal(t, "blub", SanitizeFallback(`<`, "blub"))
+	assert.Equal(t, "blub", SanitizeFallback(`lpt1`, "blub"))
+	assert.Equal(t, "blub.pdf", SanitizeFallback(`<.pdf`, "blub"))
+}
