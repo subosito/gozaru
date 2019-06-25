@@ -1,12 +1,10 @@
 language: go
-go: 1.3
+go:
+  - 1.12.x
+  - tip
 before_install:
-  - go get -t
-  - go get github.com/axw/gocov/gocov
-  - go get github.com/mattn/goveralls
-  - go get code.google.com/p/go.tools/cmd/cover
+  - go get -t -v
 script:
-  - $HOME/gopath/bin/goveralls -repotoken $COVERALLS_TOKEN
-env:
-  global:
-    - secure: "gM3rEHbVzhCYfnqND8d0MnfRob826vO3ypSDLy48SueD0+DSP9pu/xX7f0SP2KWe2Ma0CTAlM2ZUcb/eNq6BVqLEQQTvfX/AQspWQwO2QGFvq5uZJRN4McGR1Z2UzaHaURCH0z1s+qp3scTPai+4nV45GN5ScY0HfC/JfosGbAE="
+  - go test -v -race -coverprofile=coverage.out
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
