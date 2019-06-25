@@ -2,15 +2,16 @@ package norma
 
 import (
 	"fmt"
-	"github.com/stretchr/testify/assert"
 	"strings"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 var (
 	NormalizationTable = map[string][]string{
 		"a":   []string{"a", " a", "a ", " a ", "a    \n"},
-		"x x": []string{"x x", "x  x", "x   x", "x\tx", "x\r\nx"},
+		"x x": []string{"x x", "x  x", "x   x", " x  |  x ", "x\tx", "x\r\nx"},
 	}
 
 	SanitizationTable = []string{"<", ">", "|", "/", "\\", "*", "?", ":"}

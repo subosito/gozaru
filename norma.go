@@ -30,15 +30,15 @@ func SanitizePad(s string, n int) string {
 	return truncate(s, n)
 }
 
-func normalize(s string) string {
-	rx := regexp.MustCompile(UnicodeWhitespace)
-	return strings.TrimSpace(rx.ReplaceAllString(s, " "))
+func replace(s string, pattern string, replacement string) string {
+	rx := regexp.MustCompile(pattern)
+	return strings.TrimSpace(rx.ReplaceAllString(s, replacement))
 }
 
 func sanitize(s string) string {
-	rx := regexp.MustCompile(CharacterFilter)
-	sc := normalize(s)
-	sc = strings.TrimSpace(rx.ReplaceAllString(sc, ""))
+	sc := replace(s, UnicodeWhitespace, " ")
+	sc = replace(sc, CharacterFilter, "")
+	sc = replace(sc, UnicodeWhitespace, " ")
 
 	return filter(sc)
 }
