@@ -71,4 +71,8 @@ func TestGozaru_fallback(t *testing.T) {
 	assert.Equal(t, "blub", gozaru.SanitizeFallback(`<`, "blub"))
 	assert.Equal(t, "blub", gozaru.SanitizeFallback(`lpt1`, "blub"))
 	assert.Equal(t, "blub.pdf", gozaru.SanitizeFallback(`<.pdf`, "blub"))
+
+	name := strings.Repeat(" ", 400)
+	assert.Equal(t, "blub", gozaru.SanitizeFallback(name, "blub"))
+	assert.Equal(t, "blub", gozaru.SanitizePadFallback(name, 10, "blub"))
 }

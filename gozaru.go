@@ -46,6 +46,10 @@ func sanitize(s string, n int, fallback string) string {
 	sc := clean(s, fallback)
 	nc := len(sc)
 
+	if n > nc {
+		return sc
+	}
+
 	if nc > 255 {
 		nc = 255
 	}
